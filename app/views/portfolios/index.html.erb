@@ -8,4 +8,8 @@
 	<p><%= portfolio_item.body %></p>
 	<%= image_tag portfolio_item.tumb_image unless portfolio_item.tumb_image.nil?%>
   <%= link_to "Edit Item" ,edit_portfolio_path(portfolio_item) %>
+	<%= link_to "Delete portfolio item", portfolio_path(portfolio_item), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }%>
 <% end %>
