@@ -41,8 +41,7 @@ end
 end
 
 3.times do |tech|
-	Technology.create!(
-		name: "Technology #{tech}",
-		portfolio_id: Portfolio.last.id
+	Portfolio.last.technologies.create!(
+		name: "Technology #{tech}"
 	)
 end
