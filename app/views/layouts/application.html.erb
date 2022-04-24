@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevCampPortfolio</title>
+    <title><%= @page_title%></title>
+
+    <meta name="keeywords" content="<%= @seo_keywords%>"/>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,18 +16,13 @@
   <body>
      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
-     <% if current_user.is_a?(User) %>
-    <%#= link_to current_user.email, edit_user_registration_path %>
-   <%#= link_to "Log out", destroy_user_session_path, method: :delete %>
-  <%#= button_to "Log out", destroy_user_session_path, method: :delete, form: { "data-turbo" => "false" } %>
-    <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
-  <% else %>
-    <%= link_to "Log in", new_user_session_path %>
-    <%= link_to "Register", new_user_registration_path %>
-  <% end %>
+
+     <%= render 'shared/nav' , location: 'top' %>
+
+    <%= login_helper %>
+
     <%= yield %>
-    <% if session[:source]%>
-    Thanks for visiting me from <%= session[:source]%>
-    <%end%>
+    
+    <%= source_helper("application") %>
   </body>
 </html>

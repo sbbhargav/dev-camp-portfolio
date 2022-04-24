@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title%></title>
+
+    <meta name="keeywords" content="<%= @seo_keywords%>"/>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "portfolios", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
+
+     <%= render 'shared/nav', location: 'top' %>
+
+     <%= login_helper %>
+    <%= yield %>
+    
+    <%= source_helper('portfolio') %>
+  </body>
+</html>
