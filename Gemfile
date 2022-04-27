@@ -46,6 +46,8 @@ gem 'friendly_id', '~> 5.4.0'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
+gem 'bootstrap', '~> 5.1.3'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -55,6 +57,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'pry-byebug', '~> 3.9'
 end
 
 group :development do
