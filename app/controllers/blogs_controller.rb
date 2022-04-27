@@ -3,6 +3,8 @@ class BlogsController < ApplicationController
 
   layout "blog"
 
+  access all: [:show, :index], user: {except: [:destroy,:new,:create,:update,:edit]}, site_admin: :all
+
   # GET /blogs or /blogs.json
   def index
     @blogs = Blog.all
